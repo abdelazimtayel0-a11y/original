@@ -1,0 +1,6 @@
+{
+  "name": "Original",
+  "description": "الموقع الرسمي لـ Original المتخصص في إكسسوارات الهواتف المحمولة وقطع الغيار الأصلية وصيانة أجهزة iPhone وAndroid والسماعات والشواحن والساعات الذكية بأعلى جودة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
