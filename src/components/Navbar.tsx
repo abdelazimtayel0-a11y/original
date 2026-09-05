@@ -63,10 +63,10 @@ export const Navbar: React.FC = () => {
           <a
             href="#hero"
             onClick={(e) => scrollToSection(e, 'hero')}
-            className="flex items-center gap-3.5 group focus:outline-none"
+            className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none"
             id="brand-logo-link"
           >
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/20 p-0.5 overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-500/60 shadow-lg">
+            <div className="relative w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border border-white/20 p-0.5 overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-500/60 shadow-lg flex-shrink-0">
               <img
                 src={LOGO_URL}
                 alt="Original"
@@ -76,18 +76,18 @@ export const Navbar: React.FC = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-black text-xl sm:text-2xl tracking-widest text-white flex items-center gap-1.5 uppercase">
+              <span className="font-heading font-black text-lg sm:text-xl md:text-2xl tracking-wider text-white flex items-center gap-1 uppercase">
                 Original
-                <ShieldCheck className="w-4 h-4 text-amber-500" />
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
               </span>
-              <span className="text-[11px] text-zinc-400 font-medium tracking-wide">
+              <span className="text-[10px] sm:text-[11px] text-zinc-400 font-medium tracking-wide">
                 الأصلي دايمًا أفضل
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1 lg:gap-2">
+          {/* Desktop Navigation (Visible on Laptops & Desktops: lg and above) */}
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -96,7 +96,7 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   id={`nav-link-${item.id}`}
                   onClick={(e) => scrollToSection(e, item.id)}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors relative ${
+                  className={`px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors relative whitespace-nowrap ${
                     isActive
                       ? 'text-amber-500 font-bold bg-white/[0.04]'
                       : 'text-zinc-300 hover:text-amber-500 hover:bg-white/[0.02]'
@@ -104,7 +104,7 @@ export const Navbar: React.FC = () => {
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-amber-500 rounded-full" />
+                    <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-amber-500 rounded-full" />
                   )}
                 </a>
               );
@@ -112,14 +112,26 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Contact Button & Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Direct WhatsApp button on Mobile */}
+            <a
+              href="https://wa.me/201033332012"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sm:hidden p-2 rounded-xl bg-emerald-600/90 text-white hover:bg-emerald-500 transition-colors border border-emerald-400/30"
+              aria-label="تواصل واتساب"
+              title="تواصل واتساب"
+            >
+              <PhoneCall className="w-4 h-4" />
+            </a>
+
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, 'contact')}
               id="header-cta-contact-btn"
-              className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-lg shadow-white/5 active:scale-[0.98]"
+              className="hidden sm:inline-flex items-center gap-2 px-4 lg:px-5 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-lg shadow-white/5 active:scale-[0.98] whitespace-nowrap"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
               <span>تواصل معنا</span>
             </a>
 
@@ -127,10 +139,11 @@ export const Navbar: React.FC = () => {
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-neutral-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none"
+              className="lg:hidden p-2 sm:p-2.5 rounded-xl bg-white/[0.05] border border-white/10 text-neutral-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none active:scale-95"
               aria-label="القائمة الرئيسية"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-amber-500" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
@@ -140,9 +153,9 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div
           id="mobile-menu-drawer"
-          className="xl:hidden bg-black/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 shadow-2xl transition-all animate-fadeIn"
+          className="lg:hidden bg-black/95 backdrop-blur-2xl border-b border-white/10 px-4 sm:px-6 py-5 shadow-2xl transition-all max-h-[calc(100vh-80px)] overflow-y-auto"
         >
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1.5">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -151,9 +164,9 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   id={`mobile-nav-link-${item.id}`}
                   onClick={(e) => scrollToSection(e, item.id)}
-                  className={`px-4 py-3 rounded-xl text-base font-medium flex items-center justify-between transition-colors ${
+                  className={`px-4 py-3 rounded-xl text-sm sm:text-base font-medium flex items-center justify-between transition-colors ${
                     isActive
-                      ? 'bg-white/5 text-amber-500 border border-amber-500/20'
+                      ? 'bg-white/5 text-amber-500 border border-amber-500/20 font-bold'
                       : 'text-zinc-300 hover:bg-white/5 hover:text-white'
                   }`}
                 >
@@ -162,15 +175,25 @@ export const Navbar: React.FC = () => {
                 </a>
               );
             })}
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, 'contact')}
-              id="mobile-nav-cta-contact-btn"
-              className="mt-4 flex items-center justify-center gap-2 py-3 rounded-xl text-base font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-lg"
-            >
-              <PhoneCall className="w-5 h-5" />
-              <span>تواصل معنا الآن</span>
-            </a>
+            <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-white/10">
+              <a
+                href="#contact"
+                onClick={(e) => scrollToSection(e, 'contact')}
+                id="mobile-nav-cta-contact-btn"
+                className="flex items-center justify-center gap-1.5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-md"
+              >
+                <PhoneCall className="w-4 h-4" />
+                <span>تواصل معنا</span>
+              </a>
+              <a
+                href="https://wa.me/201033332012"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md"
+              >
+                <span>واتساب فوري</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
