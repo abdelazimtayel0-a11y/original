@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://original-five-phi.vercel.app/sitemap.xml
