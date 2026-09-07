@@ -86,12 +86,21 @@ export const AccessoriesSection: React.FC = () => {
               فريق ORIGINAL متواجد دائماً لمساعدتك في اختيار أفضل الإكسسوارات الأصلية المتوافقة تماماً مع هاتفك.
             </p>
           </div>
-          <a
-            href="#contact"
-            className="w-full sm:w-auto text-center whitespace-nowrap px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 active:scale-[0.98]"
+          <button
+            type="button"
+            onClick={() => {
+              const el = document.getElementById('contact');
+              if (el) {
+                const headerOffset = 80;
+                const elementPosition = el.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+              }
+            }}
+            className="w-full sm:w-auto text-center whitespace-nowrap px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 active:scale-[0.98] cursor-pointer"
           >
             استفسر الآن
-          </a>
+          </button>
         </div>
 
       </div>

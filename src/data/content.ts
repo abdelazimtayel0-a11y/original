@@ -1,14 +1,14 @@
-import { NavItem } from '../types';
+import { NavItem, SparePartScreen } from '../types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'hero', label: 'الرئيسية', href: '#hero' },
-  { id: 'accessories', label: 'الإكسسوارات', href: '#accessories' },
-  { id: 'spare-parts', label: 'قطع الغيار', href: '#spare-parts' },
-  { id: 'maintenance', label: 'الصيانة', href: '#maintenance' },
-  { id: 'headphones', label: 'السماعات', href: '#headphones' },
-  { id: 'chargers', label: 'الشواحن', href: '#chargers' },
-  { id: 'smartwatches', label: 'الساعات الذكية', href: '#smartwatches' },
-  { id: 'contact', label: 'تواصل معنا', href: '#contact' },
+  { id: 'hero', label: 'الرئيسية' },
+  { id: 'accessories', label: 'الإكسسوارات' },
+  { id: 'spare-parts', label: 'قطع الغيار' },
+  { id: 'maintenance', label: 'الصيانة' },
+  { id: 'headphones', label: 'السماعات' },
+  { id: 'chargers', label: 'الشواحن' },
+  { id: 'smartwatches', label: 'الساعات الذكية' },
+  { id: 'contact', label: 'تواصل معنا' },
 ];
 
 export const ACCESSORIES_CATEGORIES = [
@@ -55,6 +55,81 @@ export const SPARE_PARTS_HIGHLIGHTS = [
   {
     title: 'الاهتمام بأداء الجهاز بعد الصيانة',
     desc: 'نحرص على أن يستعيد جهازك كامل طاقته وسرعته واستجابته كما لو كان جديداً دون أي نقص في الأداء.',
+  },
+];
+
+export const ORIGINAL_SCREENS_SHOWCASE: SparePartScreen[] = [
+  {
+    id: 'samsung-a15',
+    title: 'شاشة Samsung A15 توكيل',
+    brand: 'Samsung',
+    badge: 'توكيل أصلي 100%',
+    image: 'https://i.pinimg.com/736x/4a/0e/c4/4a0ec4e14949f0c1f86cbdfc92268244.jpg',
+    description: 'شاشة أصلية معتمدة من التوكيل بتقنية Super AMOLED فائقة النقاء بمعدل تحديث 90Hz، توفر تشبعاً لونياً طبيعياً وسطوعاً ممتازاً مع حساسية لمس فورية مطابقة لمعايير المصنع وبدون أي تأخير.',
+    features: ['Super AMOLED 90Hz', 'ألوان مصنع أصلية 100%', 'استجابة لمس فائقة السرعة'],
+  },
+  {
+    id: 'samsung-a52s',
+    title: 'شاشة Samsung A52s توكيل',
+    brand: 'Samsung',
+    badge: 'توكيل أصلي 100%',
+    image: 'https://i.pinimg.com/736x/9f/f9/3b/9ff93bdec3d2f7101f02d21f35513fd4.jpg',
+    description: 'شاشة التوكيل الأصلية Super AMOLED تدعم معدل تحديث فائق 120Hz بدقة FHD+، مع تباين ألوان سينمائي عميق وتوافق كامل وسريع مع مستشعر بصمة الإصبع المدمج أسفل الشاشة.',
+    features: ['120Hz Super AMOLED', 'توافق تام مع بصمة الشاشة', 'زجاج معالج مقاوم للخدوش'],
+  },
+  {
+    id: 'samsung-s22-ultra',
+    title: 'شاشة Samsung S22 Ultra توكيل',
+    brand: 'Samsung',
+    badge: 'فلاجشيب توكيل أصلي',
+    image: 'https://i.pinimg.com/736x/f2/11/3a/f2113ac1de9ee4c24addefcbc0300373.jpg',
+    description: 'شاشة التوكيل الأصلية للفئة الرائدة Dynamic AMOLED 2X بدقة Quad HD+ ومعدل تحديث متكيف 120Hz، وسطوع قياسي يصل إلى 1750 nits مع دعم استثنائي دقيق لكامل وظائف قلم S-Pen.',
+    features: ['Dynamic AMOLED 2X QHD+', 'دعم كامل لقلم S-Pen', 'أعلى معايير السطوع 1750 nits'],
+  },
+  {
+    id: 'honor-x9b',
+    title: 'شاشة Honor X9b توكيل',
+    brand: 'Honor',
+    badge: 'توكيل أصلي 100%',
+    image: 'https://i.pinimg.com/736x/43/ff/69/43ff695dc52e8fd0c5ad4e833e0a2dd9.jpg',
+    description: 'شاشة التوكيل الأصلية المنحنية AMOLED بدقة 1.5K فائقة الحدة و120Hz، مزودة بتقنية Ultra-Bounce المتطورة لمقاومة الصدمات والسقوط، مع ألوان حية نابضة تدعم 1.07 مليار لون.',
+    features: ['منحنية AMOLED 1.5K', 'تقنية Ultra-Bounce ضد السقوط', 'ألوان حية 1.07 مليار لون'],
+  },
+  {
+    id: 'samsung-a25',
+    title: 'شاشة Samsung A25 توكيل',
+    brand: 'Samsung',
+    badge: 'توكيل أصلي 100%',
+    image: 'https://i.pinimg.com/736x/3c/24/b6/3c24b642425c2736740872a1812faaa0.jpg',
+    description: 'شاشة أصلية معتمدة من التوكيل Super AMOLED 120Hz، مدعومة بتقنية Vision Booster وسطوع 1000 nits للرؤية بوضوح تام تحت أشعة الشمس المباشرة، مع استقرار كهربائي كامل.',
+    features: ['Super AMOLED 120Hz', 'سطوع 1000 nits Vision Booster', 'تركيب محكم بدون فواصل'],
+  },
+  {
+    id: 'samsung-a53',
+    title: 'شاشة Samsung A53 توكيل',
+    brand: 'Samsung',
+    badge: 'توكيل أصلي 100%',
+    image: 'https://i.pinimg.com/736x/c6/00/9f/c6009f92bb48c2e4b7950514a31c4607.jpg',
+    description: 'شاشة التوكيل الرسمية المعتمدة بدقة FHD+ Super AMOLED ومعدل إنعاش 120Hz محصنة بزجاج Gorilla Glass 5، تدعم سرعة استجابة البصمة وحساسية اللمس الأصلية 100%.',
+    features: ['FHD+ Super AMOLED 120Hz', 'توافق البصمة المدمجة', 'طبقة حماية Gorilla Glass 5'],
+  },
+  {
+    id: 'redmi-a5-global',
+    title: 'شاشة Redmi A5 Global توكيل',
+    brand: 'Xiaomi / Redmi',
+    badge: 'نسخة عالمية أصلية',
+    image: 'https://i.pinimg.com/736x/18/5b/23/185b23e2abb23c9c74f147f9bd0bc17e.jpg',
+    description: 'شاشة التوكيل الرسمية للنسخة العالمية Global Edition، تضمن زوايا رؤية مريحة وتباين ألوان دقيق مع كفاءة استهلاك طاقة مثالية وتطابق تام في منافذ التوصيل مع الشاسيه.',
+    features: ['نسخة عالمية أصلية Global', 'زوايا رؤية نقية ومريحة', 'تطابق كامل في التركيب'],
+  },
+  {
+    id: 'infinix-x6531',
+    title: 'شاشة Infinix X6531 توكيل',
+    brand: 'Infinix',
+    badge: 'توكيل أصلي 100%',
+    image: 'https://i.pinimg.com/736x/45/87/7b/45877b189f14b1d3404312bc36bed597.jpg',
+    description: 'شاشة أصلية معتمدة من التوكيل لهواتف Infinix، توفر نقاء عرض ممتاز واستجابة لمس عالية الدقة وموثوقة للتصفح والألعاب، ومصنعة بخامات زجاجية متينة تدوم طويلاً.',
+    features: ['شاشة توكيل أصلية معتمدة', 'حساسية لمس فائقة للألعاب', 'عزل وحماية كاملة للبوردة'],
   },
 ];
 

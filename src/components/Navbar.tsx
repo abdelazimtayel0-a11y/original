@@ -32,8 +32,7 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
+  const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
@@ -60,11 +59,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Brand Identity */}
-          <a
-            href="#hero"
-            onClick={(e) => scrollToSection(e, 'hero')}
-            className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none"
+          <button
+            type="button"
+            onClick={() => scrollToSection('hero')}
+            className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none cursor-pointer text-right"
             id="brand-logo-link"
+            aria-label="ORIGINAL - العودة للرئيسية"
           >
             <div className="relative w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border border-white/20 p-0.5 overflow-hidden transition-transform duration-300 group-hover:scale-105 group-hover:border-amber-500/60 shadow-lg flex-shrink-0">
               <img
@@ -84,19 +84,19 @@ export const Navbar: React.FC = () => {
                 الأصلي دايمًا أفضل
               </span>
             </div>
-          </a>
+          </button>
 
           {/* Desktop Navigation (Visible on Laptops & Desktops: lg and above) */}
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <a
+                <button
                   key={item.id}
-                  href={item.href}
+                  type="button"
                   id={`nav-link-${item.id}`}
-                  onClick={(e) => scrollToSection(e, item.id)}
-                  className={`px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors relative whitespace-nowrap ${
+                  onClick={() => scrollToSection(item.id)}
+                  className={`px-2.5 xl:px-3 py-1.5 xl:py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors relative whitespace-nowrap cursor-pointer ${
                     isActive
                       ? 'text-amber-500 font-bold bg-white/[0.04]'
                       : 'text-zinc-300 hover:text-amber-500 hover:bg-white/[0.02]'
@@ -106,7 +106,7 @@ export const Navbar: React.FC = () => {
                   {isActive && (
                     <span className="absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-amber-500 rounded-full" />
                   )}
-                </a>
+                </button>
               );
             })}
           </nav>
@@ -125,15 +125,15 @@ export const Navbar: React.FC = () => {
               <PhoneCall className="w-4 h-4" />
             </a>
 
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, 'contact')}
+            <button
+              type="button"
+              onClick={() => scrollToSection('contact')}
               id="header-cta-contact-btn"
-              className="hidden sm:inline-flex items-center gap-2 px-4 lg:px-5 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-lg shadow-white/5 active:scale-[0.98] whitespace-nowrap"
+              className="hidden sm:inline-flex items-center gap-2 px-4 lg:px-5 xl:px-6 py-2 xl:py-2.5 rounded-full text-xs xl:text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-lg shadow-white/5 active:scale-[0.98] whitespace-nowrap cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
               <span>تواصل معنا</span>
-            </a>
+            </button>
 
             {/* Mobile Hamburger Button */}
             <button
@@ -159,12 +159,12 @@ export const Navbar: React.FC = () => {
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <a
+                <button
                   key={item.id}
-                  href={item.href}
+                  type="button"
                   id={`mobile-nav-link-${item.id}`}
-                  onClick={(e) => scrollToSection(e, item.id)}
-                  className={`px-4 py-3 rounded-xl text-sm sm:text-base font-medium flex items-center justify-between transition-colors ${
+                  onClick={() => scrollToSection(item.id)}
+                  className={`w-full px-4 py-3 rounded-xl text-sm sm:text-base font-medium flex items-center justify-between transition-colors text-right cursor-pointer ${
                     isActive
                       ? 'bg-white/5 text-amber-500 border border-amber-500/20 font-bold'
                       : 'text-zinc-300 hover:bg-white/5 hover:text-white'
@@ -172,19 +172,19 @@ export const Navbar: React.FC = () => {
                 >
                   <span>{item.label}</span>
                   {isActive && <div className="w-2 h-2 rounded-full bg-amber-500" />}
-                </a>
+                </button>
               );
             })}
             <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-white/10">
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, 'contact')}
+              <button
+                type="button"
+                onClick={() => scrollToSection('contact')}
                 id="mobile-nav-cta-contact-btn"
-                className="flex items-center justify-center gap-1.5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-md"
+                className="flex items-center justify-center gap-1.5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-black hover:bg-amber-500 hover:text-white transition-all shadow-md cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>تواصل معنا</span>
-              </a>
+              </button>
               <a
                 href="https://wa.me/201033332012"
                 target="_blank"

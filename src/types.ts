@@ -3,7 +3,7 @@ export const LOGO_URL = "https://i.pinimg.com/736x/d9/85/a6/d985a641fe9cb921a336
 export interface NavItem {
   id: string;
   label: string;
-  href: string;
+  href?: string;
 }
 
 export interface ServiceFeature {
@@ -16,4 +16,14 @@ export interface MaintenanceStep {
   step: string;
   title: string;
   description: string;
+}
+
+export interface SparePartScreen {
+  id: string;
+  title: string;
+  brand: string;
+  image: string;
+  badge: string;
+  description: string;
+  features: string[];
 }
