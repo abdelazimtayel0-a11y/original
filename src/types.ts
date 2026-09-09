@@ -27,3 +27,18 @@ export interface SparePartScreen {
   description: string;
   features: string[];
 }
+
+export interface PaymentMethodItem {
+  id: string;
+  name: string;
+  provider: string;
+  image: string;
+  badge: string;
+  maskedNumber: string;
+  accountNumber: string;
+  instructions: string;
+  features: string[];
+  actionLabel: string;
+  actionHref: string;
+  whatsappMessage: string;
+}

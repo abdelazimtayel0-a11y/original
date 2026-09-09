@@ -1,4 +1,4 @@
-import { NavItem, SparePartScreen } from '../types';
+import { NavItem, SparePartScreen, PaymentMethodItem } from '../types';
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'hero', label: 'الرئيسية' },
@@ -8,6 +8,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'headphones', label: 'السماعات' },
   { id: 'chargers', label: 'الشواحن' },
   { id: 'smartwatches', label: 'الساعات الذكية' },
+  { id: 'payment', label: 'معلومات الدفع' },
   { id: 'contact', label: 'تواصل معنا' },
 ];
 
@@ -118,7 +119,7 @@ export const ORIGINAL_SCREENS_SHOWCASE: SparePartScreen[] = [
     title: 'شاشة Redmi A5 Global توكيل',
     brand: 'Xiaomi / Redmi',
     badge: 'نسخة عالمية أصلية',
-    image: 'https://i.pinimg.com/736x/18/5b/23/185b23e2abb23c9c74f147f9bd0bc17e.jpg',
+    image: 'https://i.pinimg.com/736x/74/49/92/744992f1a6318f446da128bf7bca3cb0.jpg',
     description: 'شاشة التوكيل الرسمية للنسخة العالمية Global Edition، تضمن زوايا رؤية مريحة وتباين ألوان دقيق مع كفاءة استهلاك طاقة مثالية وتطابق تام في منافذ التوصيل مع الشاسيه.',
     features: ['نسخة عالمية أصلية Global', 'زوايا رؤية نقية ومريحة', 'تطابق كامل في التركيب'],
   },
@@ -214,5 +215,50 @@ export const SMARTWATCH_HIGHLIGHTS = [
   {
     title: 'توافق تام وسلاسة في الاستخدام',
     desc: 'تزامن فوري ومستقر مع هاتفك الذكي لاستقبال الإشعارات والمكالمات والتحكم بكل سلاسة ويسر.',
+  },
+];
+
+export const PAYMENT_METHODS: PaymentMethodItem[] = [
+  {
+    id: 'instapay',
+    name: 'إنستا باي • InstaPay',
+    provider: 'شبكة المدفوعات اللحظية IPN',
+    image: 'https://i.pinimg.com/736x/dd/52/1e/dd521eef91413a7f93cb8b5e0c08a755.jpg',
+    badge: 'تحويل بنكي لحظي 24/7',
+    maskedNumber: '•••• ••• 2012',
+    accountNumber: '01033332012',
+    instructions: 'تحويل لحظي مباشر وفوري من أي حساب بنكي أو محفظة إلكترونية عبر تطبيق إنستا باي بأعلى درجات الأمان والسرعة.',
+    features: ['تحويل فوري بدون رسوم إضافية', 'معتمد ومؤمن من البنك المركزي المصري', 'إشعار تأكيد فوري للعملية'],
+    actionLabel: 'تحويل مباشر عبر إنستا باي',
+    actionHref: 'https://ipn.eg',
+    whatsappMessage: 'مرحباً Original، أود تأكيد قيمة الطلب والتحويل الفوري عبر إنستا باي (InstaPay)',
+  },
+  {
+    id: 'vodafone-cash',
+    name: 'فودافون كاش • Vodafone Cash',
+    provider: 'محفظة فودافون كاش الرسمية',
+    image: 'https://i.pinimg.com/736x/2b/87/df/2b87df6c9db0dc1dcaf1bbb19362644d.jpg',
+    badge: 'كود تحويل مباشر وسريع',
+    maskedNumber: '•••• ••• 0050',
+    accountNumber: '01018600050',
+    instructions: 'تحويل فوري وسهل من محفظة فودافون كاش، يمكنك طلب كود التحويل المباشر بنقرة واحدة أو تحويل المبلغ بعد مراجعة الممثل.',
+    features: ['تحويل فوري بين المحافظ الإلكترونية', 'كود USSD مباشر وسريع (*9*7*)', 'سهولة إرسال واستلام الإيصال'],
+    actionLabel: 'تحويل مباشر فودافون كاش (*9*7*)',
+    actionHref: 'tel:*9*7*01018600050%23',
+    whatsappMessage: 'مرحباً Original، أود التأكيد مع ممثل البيع للتحويل عبر فودافون كاش وإرسال إيصال الدفع',
+  },
+  {
+    id: 'fawry',
+    name: 'فوري • Fawry',
+    provider: 'شبكة مدفوعات فوري المعتمدة',
+    image: 'https://i.pinimg.com/736x/b1/c7/83/b1c783fa926ee9d8b7eccf2838c1af47.jpg',
+    badge: 'منافذ فوري في جميع أنحاء مصر',
+    maskedNumber: '•••• 651',
+    accountNumber: '5572651',
+    instructions: 'الدفع المباشر عبر ماكينات ومنافذ فوري المنتشرة في كل مكان، أو من خلال تطبيق فوري باستخدام كود الخدمة المعتمد.',
+    features: ['متوفر لدى آلاف منافذ وتجار فوري', 'إيصال دفع فوري معتمد ومطبوع', 'دفع نقدي أو بالبطاقة البنكية'],
+    actionLabel: 'دفع مباشر عبر خدمة فوري',
+    actionHref: 'https://wa.me/201033332012?text=' + encodeURIComponent('مرحباً Original، أود الدفع عبر فوري برقم الخدمة 5572651، يرجى تأكيد المبلغ وإصدار الكود المرجعي للطلب'),
+    whatsappMessage: 'مرحباً Original، أود الدفع عبر خدمة فوري رقم 5572651، يرجى تأكيد الطلب والمبلغ',
   },
 ];

@@ -7,6 +7,7 @@ import { MaintenanceSection } from './components/MaintenanceSection';
 import { HeadphonesSection } from './components/HeadphonesSection';
 import { ChargersSection } from './components/ChargersSection';
 import { SmartwatchesSection } from './components/SmartwatchesSection';
+import { PaymentSection } from './components/PaymentSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { MessageSquare, PhoneCall } from 'lucide-react';
@@ -50,7 +51,10 @@ export default function App() {
         {/* 7. الساعات الذكية */}
         <SmartwatchesSection />
 
-        {/* 8. تواصل معنا */}
+        {/* 8. معلومات وطرق الدفع */}
+        <PaymentSection />
+
+        {/* 9. تواصل معنا */}
         <ContactSection />
       </main>
 
